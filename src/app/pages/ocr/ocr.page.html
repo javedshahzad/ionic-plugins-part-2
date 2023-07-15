@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>OCR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Please upload photo</h2>
+  <ion-item lines="none">
+    <input type="file" class="upload-image" accept="image/*" (change)="showPreviewImage($event)"/>
+  </ion-item>
+  <p class="contents">Image</p>
+  <img class="logo-uploaded" id="uploaded-image" *ngIf="imageUrl" [src]="imageUrl" alt="Uploded"/>
+  <p class="title">Results:</p>
+  <p class="contents" [innerHTML]="data"></p>
+  <ion-button (click)="extractText()" expand="full" color="secondary">Extract Text</ion-button>
+  <ion-button (click)="startSpeach()" expand="full" color="danger" *ngIf="Speaching">Start Speach</ion-button>
+  <ion-button (click)="Stopspeach()" expand="full" color="primary" *ngIf="!Speaching">Stop Speach</ion-button>
+</ion-content>

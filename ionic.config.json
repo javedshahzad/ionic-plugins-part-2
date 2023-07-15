@@ -1,0 +1,10 @@
+{
+  "name": "teca-app-new",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Device</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-label>
+    <ion-text>
+      <h3>Model: </h3> <span class="spans">{{model}}</span>
+    </ion-text>
+    <ion-text>
+      <h3>OS: </h3>
+      <span class="spans">{{os}}</span>
+    </ion-text>
+    <ion-text>
+      <h3>Serial: </h3> <span class="spans">{{serial}}</span>
+    </ion-text>
+    <ion-text>
+      <h3>Manufacturer: </h3><span class="spans">{{manufacturer}}</span>
+    </ion-text>
+    <ion-text>
+      <h3>Battery Low: </h3><span class="spans">{{ critical <= 20 ? "Critical" : "Not"}}</span>
+    </ion-text>
+    <ion-text>
+      <h3>Battery Power: </h3> <span class="spans">{{ critical}}%</span>
+    </ion-text>
+    <ion-text>
+      <h3>Charging: </h3><span class="spans">{{isPlugged === true ? "Pluged In" : "Not Charging"}}</span>
+    </ion-text>
+  </ion-label>
+</ion-content>

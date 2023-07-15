@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Flashlight</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="dark" shape="round" (click)="On()" *ngIf="status">Flashlight On <ion-icon name="flashlight"></ion-icon></ion-button>
+        <ion-button expand="block" color="danger" shape="round" (click)="Off()" *ngIf="!status">Flashlight Off <ion-icon name="flashlight"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

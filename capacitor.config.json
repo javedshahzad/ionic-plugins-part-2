@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "teca-app-new",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

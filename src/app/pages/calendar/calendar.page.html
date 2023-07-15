@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Calendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ng-container *ngIf="iscalendar">
+  <ion-list>
+    <ion-item *ngFor="let cal of calendars">
+      <ion-button slot="start" (click)="addEvent(cal)" color="warning">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+      {{ cal.name }}
+      <p>{{ cal.type }}</p>
+      <ion-button slot="end" (click)="openCal(cal)" color="success">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ng-container>
+
+  <ng-container *ngIf="!iscalendar">
+    <ion-card *ngFor="let ev of events">
+      <ion-card-header>
+        {{ ev.title }}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list >
+          <ion-item>
+            <ion-icon name="calendar"></ion-icon> Start:{{ ev.dtstart | date:'medium' }} 
+          </ion-item>
+          <ion-item>
+            <ion-icon name="calendar"></ion-icon> End: {{ ev.dtend  | date:"medium" }}
+          </ion-item>
+          <ion-item>
+            <ion-icon name="locate"></ion-icon> {{ ev.eventLocation }}
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-button expand="full" (click)="back()">Back</ion-button>
+  </ng-container>
+  
+</ion-content>
